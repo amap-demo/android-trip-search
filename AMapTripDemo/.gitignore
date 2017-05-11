@@ -1,0 +1,15 @@
+*.iml
+.idea/*
+.idea/compiler.xml
+.gradle
+gradle/
+gradlew
+gradlew.bat
+app/.gitignore
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild

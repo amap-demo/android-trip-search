@@ -1,0 +1,8 @@
+include ':app'
+
+include ':AMapTripModule'
+project(":AMapTripModule").projectDir=new File("../AMapTripModule")
+
+include ':AmapPoiSearchModule'
+project(":AmapPoiSearchModule").projectDir = new File("/Users/liangchao_suxun/Desktop/AMapProjs/AMapPoiSearchModule/AMapPoiSearchModule")
+
