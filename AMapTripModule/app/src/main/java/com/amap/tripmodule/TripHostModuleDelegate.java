@@ -170,7 +170,12 @@ public class TripHostModuleDelegate implements IDelegate {
 
     @Override
     public void showPoiRes(LatLng startLL, LatLng destLL) {
+
         mWidget.showPoiRes(startLL, destLL);
+        setSCMarkerVisible(View.GONE);
+
+        //切换模式,进入结果展示模式
+        setMode(IDelegate.SHOW_RES_MODE, null);
     }
 
     @Override

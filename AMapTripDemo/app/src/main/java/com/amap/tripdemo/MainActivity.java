@@ -1,33 +1,17 @@
 package com.amap.tripdemo;
 
-import java.io.BufferedOutputStream;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import android.content.Intent;
 import android.location.Location;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.services.core.PoiItem;
 import com.amap.poisearch.util.CityModel;
-import com.amap.poisearch.util.CityUtil;
 import com.amap.tripmodule.ITripHostModule.IDelegate;
 import com.amap.tripmodule.ITripHostModule.IParentDelegate;
 import com.amap.tripmodule.TripHostModuleDelegate;
-import com.google.gson.Gson;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import static com.amap.poisearch.searchmodule.ISearchModule.IDelegate.DEST_POI_TYPE;
 import static com.amap.poisearch.searchmodule.ISearchModule.IDelegate.START_POI_TYPE;
@@ -193,15 +177,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onShowPoiRes() {
+
+
         LatLng startLL = new LatLng(mStartPoi.getLatLonPoint().getLatitude(),
             mStartPoi.getLatLonPoint().getLongitude());
         LatLng destLL = new LatLng(mDestPoi.getLatLonPoint().getLatitude(),
             mDestPoi.getLatLonPoint().getLongitude());
-        mTripHostDelegate.showPoiRes(startLL, destLL);
-        mTripHostDelegate.setSCMarkerVisible(View.GONE);
 
-        //切换模式,进入结果展示模式
-        mTripHostDelegate.setMode(IDelegate.SHOW_RES_MODE, null);
+
+        mTripHostDelegate.showPoiRes(startLL, destLL);
     }
 
     @Override
