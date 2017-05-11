@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <RelativeLayout
+        android:id="@+id/type_icon_rl"
+        android:layout_width="@dimen/choose_location_item_height"
+        android:layout_height="@dimen/choose_location_item_height"
+        android:layout_alignParentLeft="true"
+        >
+        <ImageView
+            android:id="@+id/type_icon"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            android:layout_centerInParent="true"
+            >
+        </ImageView>
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/type_icon_rl"
+        >
+
+        <include
+            android:id="@+id/divider"
+            layout="@layout/widget_gray_divider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+        </include>
+
+        <TextView
+            android:id="@+id/input_location_et"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:layout_above="@id/divider"
+            android:layout_alignParentTop="true"
+            android:background="@null"
+            android:textColor="@color/normal_text_color"
+            android:textSize="@dimen/normal_font_size"
+            >
+        </TextView>
+    </RelativeLayout>
+
+</merge>

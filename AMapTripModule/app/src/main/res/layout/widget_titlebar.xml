@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:id="@+id/user_icon"
+        android:layout_width="@dimen/common_icon_size"
+        android:layout_height="@dimen/common_icon_size"
+        android:src="@mipmap/user_icon"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        >
+
+    </ImageView>
+
+    <ImageView
+        android:id="@+id/back_iv"
+        android:layout_width="@dimen/title_bar_height"
+        android:layout_height="@dimen/title_bar_height"
+        android:scaleType="centerInside"
+        android:paddingTop="@dimen/padding"
+        android:paddingBottom="@dimen/padding"
+        android:paddingRight="@dimen/paddingx2"
+        android:src="@mipmap/back"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:visibility="gone"
+        >
+    </ImageView>
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="确认呼叫"
+        android:textSize="@dimen/title_size"
+        android:textColor="@color/title_color"
+        android:visibility="gone"
+        >
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/msg_icon"
+        android:layout_width="@dimen/common_icon_size"
+        android:layout_height="@dimen/common_icon_size"
+        android:src="@mipmap/msg"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        >
+    </ImageView>
+
+    <LinearLayout
+        android:id="@+id/cityname_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/cityname_tv"
+            android:textSize="@dimen/normal_font_size"
+            android:text="北京"
+            android:textColor="@color/normal_text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
+        
+        <ImageView
+            android:id="@+id/cityname_iv"
+            android:src="@mipmap/down_arrow"
+            android:layout_width="@dimen/small_icon_size"
+            android:layout_height="@dimen/small_icon_size"/>
+    </LinearLayout>
+</merge>
