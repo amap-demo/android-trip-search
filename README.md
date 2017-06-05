@@ -14,9 +14,8 @@
 AMapTripModule 提供了叫车主页的组件
 
 ### 组件截图 ###
-
-![Screenshot](https://github.com/amap-demo/android-trip-demo/blob/master/trip_host_sc.png)
-![Screenshot](https://github.com/amap-demo/android-trip-demo/blob/master/trip_start_call_sc.png)
+<img src="https://github.com/amap-demo/android-trip-demo/blob/master/trip_host_sc.png" width="50%" />
+<img src="https://github.com/amap-demo/android-trip-demo/blob/master/trip_start_call_sc.png" width="50%" />
 
 ### gradle中引入AmapPoiSearchModule和AMapTripModule ###
 #### settings.gradle 配置 ####
