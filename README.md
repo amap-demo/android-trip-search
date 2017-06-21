@@ -1,4 +1,4 @@
-# android-trip-demo
+# android-trip-search
 出行类app结合了叫车主页和检索的demo
 
 ## 前述 ##
