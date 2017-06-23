@@ -147,6 +147,11 @@ public class TripHostModuleWidget extends RelativeLayout implements IWidget, Vie
     }
 
     @Override
+    public void onStartLocChanged(LatLng latLng) {
+        mHostMapWidget.onStartLocChanged(latLng);
+    }
+
+    @Override
     public void onLocationChanged(AMapLocation aMapLocation) {
         mHostMapWidget.onLocationChanged(aMapLocation);
     }

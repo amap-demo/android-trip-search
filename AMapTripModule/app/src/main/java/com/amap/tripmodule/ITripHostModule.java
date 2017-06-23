@@ -117,6 +117,12 @@ public interface ITripHostModule {
         public void onLocationChanged(AMapLocation aMapLocation);
 
         /**
+         * 起始点发生了变化
+         * @param latLng
+         */
+        public void onStartLocChanged(LatLng latLng);
+
+        /**
          * 展示选择的结果
          */
         public void showPoiRes(LatLng startLL, LatLng destLL);
@@ -171,6 +177,12 @@ public interface ITripHostModule {
          * 获得当前城市
          */
         public CityModel getCurrCity();
+
+        /**
+         * 获得用户的定位地址
+         * @return
+         */
+        AMapLocation getCurrLocation();
 
         /**
          * 设置当前城市

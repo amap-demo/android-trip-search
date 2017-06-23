@@ -94,6 +94,11 @@ public class TripHostModuleDelegate implements IDelegate {
     }
 
     @Override
+    public AMapLocation getCurrLocation(){
+        return mCurrLoc;
+    }
+
+    @Override
     public void setCurrCity(CityModel city) {
         this.mCurrCity = city;
 
@@ -290,6 +295,8 @@ public class TripHostModuleDelegate implements IDelegate {
 
                     mWidget.setStartLocation(var1.getTitle());
                     mParentDelegate.onStartPoiChange(var1);
+                    mWidget.onStartLocChanged(
+                        new LatLng(var1.getLatLonPoint().getLatitude(), var1.getLatLonPoint().getLongitude()));
                 }
             });
     }

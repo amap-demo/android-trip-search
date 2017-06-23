@@ -5,6 +5,7 @@ import java.io.InputStream;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.opengl.GLSurfaceView.EGLWindowSurfaceFactory;
 import android.util.AttributeSet;
 import android.util.Log;
 import com.amap.api.location.AMapLocation;
@@ -68,11 +69,13 @@ public class HostMapWidget extends MapView {
         }
 
         mUserLocMarker.setPosition(new LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude()));
-        getMap().moveCamera(
-            CameraUpdateFactory.newLatLng(new LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude())));
+        getMap().animateCamera(
+            CameraUpdateFactory.newLatLngZoom(new LatLng(aMapLocation.getLatitude(), aMapLocation.getLongitude()),
+                ZOOM_LEVEL_AFTER_LOCATION));
+    }
 
-        //进行zoom
-        getMap().moveCamera(CameraUpdateFactory.zoomTo(ZOOM_LEVEL_AFTER_LOCATION));
+    public void onStartLocChanged(LatLng latLng){
+        getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, ZOOM_LEVEL_AFTER_LOCATION));
     }
 
     private Marker addUserIconMarker(int iconRes, int destWidth, int destHeight, LatLng latLng, float ax, float ay) {

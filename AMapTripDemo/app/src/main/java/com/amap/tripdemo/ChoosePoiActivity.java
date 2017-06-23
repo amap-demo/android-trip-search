@@ -41,16 +41,16 @@ public class ChoosePoiActivity extends AppCompatActivity {
 
         RelativeLayout contentView = (RelativeLayout)findViewById(R.id.content_view);
 
-        mSearchModuelDeletage = new SearchModuleDelegate();
-        mSearchModuelDeletage.bindParentDelegate(mSearchModuleParentDelegate);
-        contentView.addView(mSearchModuelDeletage.getWidget(this));
-
         if (getIntent() != null) {
             mPoiType = getIntent().getIntExtra(POI_TYPE_KEY, START_POI_TYPE);
-            mSearchModuelDeletage.setPoiType(mPoiType);
             mCityModel = getIntent().getParcelableExtra(CITY_KEY);
-            mSearchModuelDeletage.setCity(mCityModel);
         }
+
+        mSearchModuelDeletage = new SearchModuleDelegate();
+        mSearchModuelDeletage.setPoiType(mPoiType);
+        mSearchModuelDeletage.setCity(mCityModel);
+        mSearchModuelDeletage.bindParentDelegate(mSearchModuleParentDelegate);
+        contentView.addView(mSearchModuelDeletage.getWidget(this));
     }
 
     public AMapLocationClient mLocationClient = null;
@@ -193,9 +193,7 @@ public class ChoosePoiActivity extends AppCompatActivity {
         }
 
         if (MAIN_ACTIVITY_REQUEST_CHOOSE_CITY_ADDRESS_CODE == requestCode && resultCode == RESULT_OK) {
-            String currCityStr = data.getStringExtra(ChooseCityActivity.CURR_CITY_KEY);
-            Gson gson = new Gson();
-            CityModel cityModel = gson.fromJson(currCityStr, CityModel.class);
+            CityModel cityModel = data.getParcelableExtra(ChooseCityActivity.CURR_CITY_KEY);
             mSearchModuelDeletage.setCity(cityModel);
         }
 
