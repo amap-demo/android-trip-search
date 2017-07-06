@@ -2,6 +2,7 @@ package com.amap.tripmodule;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 import com.amap.api.location.AMapLocation;
@@ -185,7 +186,12 @@ public class TripHostModuleDelegate implements IDelegate {
 
     @Override
     public void onReLocate() {
-        mWidget.setStartLocation(mCurrLoc.getPoiName());
+        if (mCurrLoc != null) {
+            mWidget.setStartLocation(mCurrLoc.getPoiName());
+        } else {
+            mWidget.setStartLocation("加载中");
+        }
+
         mWidget.onLocationChanged(mCurrLoc);
 
         resetCityModelByLocation(mCurrLoc);
@@ -297,6 +303,7 @@ public class TripHostModuleDelegate implements IDelegate {
                     mParentDelegate.onStartPoiChange(var1);
                     mWidget.onStartLocChanged(
                         new LatLng(var1.getLatLonPoint().getLatitude(), var1.getLatLonPoint().getLongitude()));
+                    mWidget.ignoreCamereMoveOnce();
                 }
             });
     }

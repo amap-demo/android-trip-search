@@ -1,5 +1,7 @@
 package com.amap.tripmodule;
 
+import java.util.concurrent.atomic.AtomicBoolean;
+
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -166,6 +168,12 @@ public class TripHostModuleWidget extends RelativeLayout implements IWidget, Vie
         mHostMapWidget.removeStartAndDestMarkers();
     }
 
+    private AtomicBoolean isIgnoreCamereMoveOnce = new AtomicBoolean(false);
+    @Override
+    public void ignoreCamereMoveOnce() {
+        isIgnoreCamereMoveOnce.set(true);
+    }
+
     public TitleBarWidget.ParentWidget mTitleBarParentWidget = new TitleBarWidget.ParentWidget() {
         @Override
         public void onClickUserIcon() {
@@ -202,6 +210,12 @@ public class TripHostModuleWidget extends RelativeLayout implements IWidget, Vie
         public void onCameraChange(CameraPosition cameraPosition) {
             //如果是展示结果的模式，则忽略onCameraChange
             if (mMode == IDelegate.SHOW_RES_MODE) {
+                return;
+            }
+
+            //如果是geo检索触发了camerefinish,则忽略
+            if (isIgnoreCamereMoveOnce.get()) {
+                isIgnoreCamereMoveOnce.set(false);
                 return;
             }
 

@@ -131,6 +131,11 @@ public interface ITripHostModule {
          * 删除开始和结束地点的marker
          */
         public void removeStartAndDestMarkers();
+
+        /**
+         * geo结果返回触发了地图移动，忽略一次CameraChangeFinish的回调
+         */
+        public void ignoreCamereMoveOnce();
     }
 
     public interface IDelegate {
