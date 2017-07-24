@@ -25,8 +25,10 @@ include ':app'
 include ':AMapTripModule'
 project(":AMapTripModule").projectDir=new File("AMapTripModule路径")
 
+// AmapPoiSearchModule的下载地址：https://github.com/amap-demo/android-poisearch-demo
 include ':AmapPoiSearchModule'
 project(":AmapPoiSearchModule").projectDir = new File("AmapPoiSearchModule路径")
+
 ```
 
 #### build.gradle 配置 ####
