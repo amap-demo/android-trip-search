@@ -25,9 +25,10 @@ include ':app'
 include ':AMapTripModule'
 project(":AMapTripModule").projectDir=new File("AMapTripModule路径")
 
+//you can include the AmapPoiSearchModule if you'd like to DIY
 // AmapPoiSearchModule的下载地址：https://github.com/amap-demo/android-poisearch-demo
-include ':AmapPoiSearchModule'
-project(":AmapPoiSearchModule").projectDir = new File("AmapPoiSearchModule路径")
+//include ':AmapPoiSearchModule'
+//project(":AmapPoiSearchModule").projectDir = new File("AmapPoiSearchModule路径")
 
 ```
 
@@ -37,8 +38,10 @@ dependencies {
 
     .......
     compile project(":AMapTripModule")
-    compile project(":AmapPoiSearchModule")
-    
+    compile 'com.amap.api:poisearchmodule:1.1.0'
+//    compile the project if you'd like to DIV
+//    compile project(":AmapPoiSearchModule") 
+
     compile 'com.amap.api:3dmap:latest.integration'
     compile 'com.amap.api:search:latest.integration'
     compile 'com.amap.api:location:latest.integration'
