@@ -34,7 +34,11 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
 
     compile project(":AMapTripModule")
-    compile project(":AmapPoiSearchModule")
+
+
+    compile 'com.amap.api:poisearchmodule:1.1.0'
+//    compile the project if you'd like to DIV
+//    compile project(":AmapPoiSearchModule")
 
     compile 'com.amap.api:3dmap:latest.integration'
     compile 'com.amap.api:search:latest.integration'

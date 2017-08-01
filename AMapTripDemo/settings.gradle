@@ -3,6 +3,7 @@ include ':app'
 include ':AMapTripModule'
 project(":AMapTripModule").projectDir=new File("../AMapTripModule")
 
-include ':AmapPoiSearchModule'
-project(":AmapPoiSearchModule").projectDir = new File("/Users/liangchao_suxun/Desktop/AMapProjs/AMapPoiSearchModule/AMapPoiSearchModule")
+//you can include the AmapPoiSearchModule if you'd like to DIY
+//include ':AmapPoiSearchModule'
+//project(":AmapPoiSearchModule").projectDir = new File("...")
 
