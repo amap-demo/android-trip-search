@@ -37,10 +37,10 @@ project(":AMapTripModule").projectDir=new File("AMapTripModule路径")
 dependencies {
 
     .......
-    compile project(":AMapTripModule")
+
+    
+    compile 'com.amap.api:tripmodule:1.0.0'
     compile 'com.amap.api:poisearchmodule:1.1.0'
-//    compile the project if you'd like to DIV
-//    compile project(":AmapPoiSearchModule") 
 
     compile 'com.amap.api:3dmap:latest.integration'
     compile 'com.amap.api:search:latest.integration'
