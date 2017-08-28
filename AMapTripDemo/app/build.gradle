@@ -35,10 +35,10 @@ dependencies {
 
     //    compile the project if you'd like to DIV
 //    compile project(":AMapTripModule")
-    compile 'com.amap.api:tripmodule:1.0.0'
+    compile 'com.amap.api:tripmodule:1.0.1'
 
 
-    compile 'com.amap.api:poisearchmodule:1.1.0'
+    compile 'com.amap.api:poisearchmodule:1.1.1'
 //    compile the project if you'd like to DIV
 //    compile project(":AmapPoiSearchModule")
 
