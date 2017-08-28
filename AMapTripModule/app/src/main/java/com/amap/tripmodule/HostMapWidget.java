@@ -5,13 +5,10 @@ import java.io.InputStream;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.opengl.GLSurfaceView.EGLWindowSurfaceFactory;
 import android.util.AttributeSet;
-import android.util.Log;
 import com.amap.api.location.AMapLocation;
 import com.amap.api.maps.AMap.OnCameraChangeListener;
 import com.amap.api.maps.AMapOptions;
-import com.amap.api.maps.CameraUpdate;
 import com.amap.api.maps.CameraUpdateFactory;
 import com.amap.api.maps.MapView;
 import com.amap.api.maps.model.BitmapDescriptor;
@@ -19,7 +16,6 @@ import com.amap.api.maps.model.BitmapDescriptorFactory;
 import com.amap.api.maps.model.CameraPosition;
 import com.amap.api.maps.model.LatLng;
 import com.amap.api.maps.model.LatLngBounds;
-import com.amap.api.maps.model.LatLngBoundsCreator;
 import com.amap.api.maps.model.Marker;
 import com.amap.api.maps.model.MarkerOptions;
 
@@ -48,6 +44,8 @@ public class HostMapWidget extends MapView {
         getMap().getUiSettings().setZoomControlsEnabled(false);
         getMap().getUiSettings().setLogoPosition(AMapOptions.LOGO_POSITION_BOTTOM_RIGHT);
         getMap().setOnCameraChangeListener(mOnCameraChangeListener);
+        getMap().setPointToCenter(getWidth() / 2, getHeight() / 2);
+        getMap().getUiSettings().setGestureScaleByMapCenter(true);
     }
 
     private Marker mUserLocMarker;
@@ -75,7 +73,7 @@ public class HostMapWidget extends MapView {
     }
 
     public void onStartLocChanged(LatLng latLng){
-        getMap().animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, ZOOM_LEVEL_AFTER_LOCATION));
+        getMap().animateCamera(CameraUpdateFactory.newLatLng(latLng));
     }
 
     private Marker addUserIconMarker(int iconRes, int destWidth, int destHeight, LatLng latLng, float ax, float ay) {
@@ -96,9 +94,8 @@ public class HostMapWidget extends MapView {
 
     public void setMapCameraPos(LatLng latLng) {
         getMap().moveCamera(
-            CameraUpdateFactory.newLatLng(new LatLng(latLng.latitude, latLng.longitude)));
-        //进行zoom
-        getMap().moveCamera(CameraUpdateFactory.zoomTo(ZOOM_LEVEL_AFTER_LOCATION));
+            CameraUpdateFactory
+                .newLatLngZoom(new LatLng(latLng.latitude, latLng.longitude), ZOOM_LEVEL_AFTER_LOCATION));
 
     }
 

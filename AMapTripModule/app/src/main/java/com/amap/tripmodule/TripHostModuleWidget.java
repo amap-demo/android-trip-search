@@ -52,7 +52,6 @@ public class TripHostModuleWidget extends RelativeLayout implements IWidget, Vie
         mMode = IDelegate.INPUT_MODE;
 
         LayoutInflater.from(getContext()).inflate(R.layout.widget_triphost, this);
-        setBackgroundColor(Color.GREEN);
 
         mTitleBarWidget = (TitleBarWidget)findViewById(R.id.title_bar);
         mTitleBarWidget.setParentWidget(mTitleBarParentWidget);
